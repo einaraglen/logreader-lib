@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Version>0.1.2</Version>
+    <AssemblyName>logreader-lib-$(Version)</AssemblyName>
+    <OutputName>logreader-lib-$(Version)</OutputName>
+  </PropertyGroup>
+ <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.22.1" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.4" />
+    <PackageReference Include="MQTTnet" Version="4.1.4.563" />
+    <PackageReference Include="MQTTnet.Extensions.ManagedClient" Version="4.1.4.563" />
+  </ItemGroup>
+</Project>
