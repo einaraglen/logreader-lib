@@ -18,7 +18,8 @@ public class MQTTClientSingleton
     public void Connect(string id, string address, string port)
     {
         MqttClientOptionsBuilder builder = new MqttClientOptionsBuilder()
-                                                        .WithClientId($"edge@{id}")
+                                                        .WithClientId(id)
+                                                        .WithProtocolVersion(MQTTnet.Formatter.MqttProtocolVersion.V500)
                                                         .WithTcpServer(address, Convert.ToInt32(port));
         ManagedMqttClientOptions options = new ManagedMqttClientOptionsBuilder()
                                 .WithAutoReconnectDelay(TimeSpan.FromSeconds(60))
@@ -67,7 +68,7 @@ public class MQTTClientSingleton
 
     public static MQTTClientSingleton Instance { get { return lazy.Value; } }
 
-    public IMqttClient Client { get { return this.client!.InternalClient; } }
+    public IManagedMqttClient Client { get { return this.client!; } }
 
     private void LoadHandlers()
     {
