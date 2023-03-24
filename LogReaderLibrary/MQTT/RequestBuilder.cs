@@ -60,7 +60,7 @@ public class RequestBuilder
         Task? waiting = Task.Delay(this.timeout);
         Task? complete = await Task.WhenAny(this.response.Task, waiting);
 
-        MQTTClientSingleton.Instance.Client.ApplicationMessageReceivedAsync += OnResponse;
+        MQTTClientSingleton.Instance.Client.ApplicationMessageReceivedAsync -= OnResponse;
 
         if (complete != this.response.Task)
         {
