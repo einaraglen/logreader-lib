@@ -4,6 +4,8 @@ public class Delta2
 {
     public static long[] Encode(long[] input)
     {
+        if (input.Length == 1) return input;
+        
         long[] compressed = new long[input.Length];
 
         compressed[0] = input[0];

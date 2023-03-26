@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option csharp_namespace = "LogReaderLibrary.Models.Proto.Timeseries";
+
+message RangeRequest {
+  repeated string signals = 1;
+  uint64 from = 2;
+  uint64 to = 3;
+}
+
+message ChangesRequest {
+  repeated string signals = 1;
+  int64 changes = 2;
+}
+
+message BoundsPayload {
+  double from = 1;
+  double to = 2;
+}
+
+message Timestamps {
+  repeated int64 entries = 1;
+}
+
+message Values {
+  repeated double entries = 1;
+}
+
+message CompressedTimeseriesPayload {   
+  repeated string signals = 1;
+  repeated Timestamps timestamps = 2;
+  repeated Values values = 3;
+}
+
+message Timeseries {
+  double x_axis = 1;
+  double y_axis = 2;
+}
+
+message TimeseriesValues {
+  repeated Timeseries values = 1;
+}
+
+message TimeseriesPayload {
+  map<string, TimeseriesValues> timeseries = 1;
+}

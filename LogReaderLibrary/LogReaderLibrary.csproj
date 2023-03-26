@@ -3,7 +3,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.1.5</Version>
+    <Version>0.1.7</Version>
     <AssemblyName>logreader-lib-$(Version)</AssemblyName>
     <OutputName>logreader-lib-$(Version)</OutputName>
   </PropertyGroup>

@@ -1,16 +1,12 @@
-using System.Text;
 using LogReaderLibrary.MQTT.Message;
-using MQTTnet.Client;
-
 namespace LogReaderLibrary.MQTT.Request;
+
 
 public class RequestBuilder
 {
     private string? correlation;
     private string? topic;
     private TimeSpan timeout = TimeSpan.FromMinutes(1);
-    private TaskCompletionSource<byte[]> response = new TaskCompletionSource<byte[]>();
-
     public RequestBuilder WithTopic(String topic)
     {
         this.topic = topic;
@@ -29,17 +25,6 @@ public class RequestBuilder
         return this;
     }
 
-    private Task OnResponse(MqttApplicationMessageReceivedEventArgs args)
-    {
-        string responseCorrelation = Encoding.UTF8.GetString(args.ApplicationMessage.CorrelationData);
-
-        if (args.ApplicationMessage.Topic == this.GetResponseTopic() && responseCorrelation.Equals(this.correlation))
-        {
-            response.SetResult(args.ApplicationMessage.Payload);
-        }
-
-        return Task.CompletedTask;
-    }
 
     private string GetResponseTopic()
     {
@@ -48,25 +33,34 @@ public class RequestBuilder
 
     public async Task<byte[]> Publish(byte[] payload)
     {
+        var receiver = new ResponseReceiver(this.GetResponseTopic(), this.correlation!);
 
-        await new MessageBuilder()
-                .WithTopic(this.topic!)
-                .WithPayload(payload)
-                .WithCorrelation(correlation!)
-                .Publish();
+        MQTTClientSingleton.Instance.AddMessageReceiver(receiver);
 
-        MQTTClientSingleton.Instance.Client.ApplicationMessageReceivedAsync += OnResponse;
-
-        Task? waiting = Task.Delay(this.timeout);
-        Task? complete = await Task.WhenAny(this.response.Task, waiting);
-
-        MQTTClientSingleton.Instance.Client.ApplicationMessageReceivedAsync -= OnResponse;
-
-        if (complete != this.response.Task)
+        try
         {
-            throw new TimeoutException($"Response for {this.topic} took over 1 min");
-        }
+            await new MessageBuilder()
+                            .WithTopic(this.topic!)
+                            .WithPayload(payload)
+                            .WithCorrelation(correlation!)
+                            .Publish()
+                            .ConfigureAwait(false);
 
-        return await response.Task;
+            Task? waiting = Task.Delay(this.timeout);
+            Task? complete = await Task.WhenAny(receiver.response.Task, waiting).ConfigureAwait(false);
+
+
+
+            if (complete != receiver.response.Task)
+            {
+                throw new TimeoutException($"Response for {this.topic} took over 1 min");
+            }
+
+            return await receiver.response.Task.ConfigureAwait(false);
+        }
+        finally
+        {
+            MQTTClientSingleton.Instance.RemoveMessageReceiver(receiver);
+        }
     }
 }

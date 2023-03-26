@@ -1,3 +1,4 @@
+using LogReaderLibrary.MQTT.Message;
 using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Extensions.ManagedClient;
@@ -9,22 +10,23 @@ public class MQTTClientSingleton
     private static readonly Lazy<MQTTClientSingleton> lazy =
         new Lazy<MQTTClientSingleton>(() => new MQTTClientSingleton());
 
+    private readonly MessageAggregator aggregator = new MessageAggregator();
     private IManagedMqttClient? client;
-    private List<string> topics = new List<string>();
-    private bool connected = false;
-
     private MQTTClientSingleton() { }
 
     public void Connect(string id, string address, string port)
     {
-        MqttClientOptionsBuilder builder = new MqttClientOptionsBuilder()
-                                                        .WithClientId(id)
-                                                        .WithProtocolVersion(MQTTnet.Formatter.MqttProtocolVersion.V500)
-                                                        .WithTcpServer(address, Convert.ToInt32(port));
-        ManagedMqttClientOptions options = new ManagedMqttClientOptionsBuilder()
-                                .WithAutoReconnectDelay(TimeSpan.FromSeconds(60))
-                                .WithClientOptions(builder.Build())
-                                .Build();
+        MqttClientOptionsBuilder builder =
+            new MqttClientOptionsBuilder()
+                .WithClientId(id)
+                .WithProtocolVersion(MQTTnet.Formatter.MqttProtocolVersion.V500)
+                .WithTcpServer(address, Convert.ToInt32(port));
+
+        ManagedMqttClientOptions options = 
+            new ManagedMqttClientOptionsBuilder()
+                .WithAutoReconnectDelay(TimeSpan.FromSeconds(60))
+                .WithClientOptions(builder.Build())
+                .Build();
 
         this.client = new MqttFactory().CreateManagedMqttClient();
 
@@ -32,33 +34,22 @@ public class MQTTClientSingleton
         this.client.StartAsync(options).Wait();
     }
 
-    public MQTTClientSingleton WithListener(string topic)
+    public MQTTClientSingleton AddTopic(string topic)
     {
-        var builder = new MqttTopicFilterBuilder().WithTopic(topic).Build();
-        this.client.SubscribeAsync(builder.Topic).Wait();
-        this.topics.Add(topic);
+        this.client.SubscribeAsync(topic).Wait();
         return this;
     }
 
-    public void Subscribe()
+    public MQTTClientSingleton AddMessageReceiver(IMessageReceiver receiver)
     {
-        Console.WriteLine($"Subscribed to {this.topics.Count} topics");
-    }
-
-    public MQTTClientSingleton AddMessageReceiver(Func<MQTTnet.Client.MqttApplicationMessageReceivedEventArgs, System.Threading.Tasks.Task> OnMessageReceived)
-    {
-        this.client!.ApplicationMessageReceivedAsync += OnMessageReceived;
+        this.aggregator.Subscribe(receiver);
         return this;
     }
 
-    public List<String> GetTopics()
+    public MQTTClientSingleton RemoveMessageReceiver(IMessageReceiver receiver)
     {
-        return this.topics;
-    }
-
-    public bool IsConnected()
-    {
-        return this.connected;
+        this.aggregator.Unsubscribe(receiver);
+        return this;
     }
 
     public void Disconnect()
@@ -75,26 +66,29 @@ public class MQTTClientSingleton
         this.client!.ConnectedAsync += this.OnConnected;
         this.client!.DisconnectedAsync += this.OnDisconected;
         this.client!.ConnectingFailedAsync += this.OnFailure;
+        this.client!.ApplicationMessageReceivedAsync += this.OnMessage;
+    }
+
+    private async Task OnMessage(MqttApplicationMessageReceivedEventArgs e)
+    {
+        await this.aggregator.PublishAsync(e);
     }
 
     private Task OnConnected(MqttClientConnectedEventArgs arg)
     {
         Console.WriteLine("MQTT Connected");
-        this.connected = true;
         return Task.CompletedTask;
     }
 
     private Task OnDisconected(MqttClientDisconnectedEventArgs arg)
     {
         Console.WriteLine("MQTT Disconnected");
-        this.connected = false;
         return Task.CompletedTask;
     }
 
     private Task OnFailure(ConnectingFailedEventArgs arg)
     {
         Console.WriteLine("MQTT Connection failed check network or broker!");
-        this.connected = false;
         return Task.CompletedTask;
     }
 }
