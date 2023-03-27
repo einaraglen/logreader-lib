@@ -1,9 +1,9 @@
 
 using System.Text;
-using LogReaderLibrary.MQTT.Message;
+using SeaBrief.MQTT.Message;
 using MQTTnet.Client;
 
-namespace LogReaderLibrary.MQTT.Request;
+namespace SeaBrief.MQTT.Request;
 public class ResponseReceiver : IMessageReceiver
 {
     private string correlation;

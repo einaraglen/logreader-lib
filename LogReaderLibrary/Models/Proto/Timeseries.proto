@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "LogReaderLibrary.Models.Proto.Timeseries";
+option csharp_namespace = "SeaBrief.Models.Proto.Timeseries";
 
 message RangeRequest {
   repeated string signals = 1;

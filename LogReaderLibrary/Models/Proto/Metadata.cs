@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace LogReaderLibrary.Models.Proto.Metadata {
+namespace SeaBrief.Models.Proto.Metadata {
 
   /// <summary>Holder for reflection information generated from Metadata.proto</summary>
   public static partial class MetadataReflection {
@@ -38,14 +38,14 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::LogReaderLibrary.Models.Proto.Metadata.Signal), global::LogReaderLibrary.Models.Proto.Metadata.Signal.Parser, new[]{ "Id", "Name", "Path" }, new[]{ "Path" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LogReaderLibrary.Models.Proto.Metadata.SignalsPayload), global::LogReaderLibrary.Models.Proto.Metadata.SignalsPayload.Parser, new[]{ "Signals" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LogReaderLibrary.Models.Proto.Metadata.Count), global::LogReaderLibrary.Models.Proto.Metadata.Count.Parser, new[]{ "Signal", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LogReaderLibrary.Models.Proto.Metadata.CountPayload), global::LogReaderLibrary.Models.Proto.Metadata.CountPayload.Parser, new[]{ "Counts" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LogReaderLibrary.Models.Proto.Metadata.MetadataRequest), global::LogReaderLibrary.Models.Proto.Metadata.MetadataRequest.Parser, new[]{ "Signals", "From", "To" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LogReaderLibrary.Models.Proto.Metadata.Intervals), global::LogReaderLibrary.Models.Proto.Metadata.Intervals.Parser, new[]{ "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LogReaderLibrary.Models.Proto.Metadata.Metadata), global::LogReaderLibrary.Models.Proto.Metadata.Metadata.Parser, new[]{ "Signal", "Intervals" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LogReaderLibrary.Models.Proto.Metadata.MetadataPayload), global::LogReaderLibrary.Models.Proto.Metadata.MetadataPayload.Parser, new[]{ "Metadata" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.Signal), global::SeaBrief.Models.Proto.Metadata.Signal.Parser, new[]{ "Id", "Name", "Path" }, new[]{ "Path" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.SignalsPayload), global::SeaBrief.Models.Proto.Metadata.SignalsPayload.Parser, new[]{ "Signals" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.Count), global::SeaBrief.Models.Proto.Metadata.Count.Parser, new[]{ "Signal", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.CountPayload), global::SeaBrief.Models.Proto.Metadata.CountPayload.Parser, new[]{ "Counts" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.MetadataRequest), global::SeaBrief.Models.Proto.Metadata.MetadataRequest.Parser, new[]{ "Signals", "From", "To" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.Intervals), global::SeaBrief.Models.Proto.Metadata.Intervals.Parser, new[]{ "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.Metadata), global::SeaBrief.Models.Proto.Metadata.Metadata.Parser, new[]{ "Signal", "Intervals" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.MetadataPayload), global::SeaBrief.Models.Proto.Metadata.MetadataPayload.Parser, new[]{ "Metadata" }, null, null, null, null)
           }));
     }
     #endregion
@@ -66,7 +66,7 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LogReaderLibrary.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[0]; }
+      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -341,7 +341,7 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LogReaderLibrary.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[1]; }
+      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -373,12 +373,12 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
 
     /// <summary>Field number for the "signals" field.</summary>
     public const int SignalsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::LogReaderLibrary.Models.Proto.Metadata.Signal> _repeated_signals_codec
-        = pb::FieldCodec.ForMessage(10, global::LogReaderLibrary.Models.Proto.Metadata.Signal.Parser);
-    private readonly pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Signal> signals_ = new pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Signal>();
+    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Metadata.Signal> _repeated_signals_codec
+        = pb::FieldCodec.ForMessage(10, global::SeaBrief.Models.Proto.Metadata.Signal.Parser);
+    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Signal> signals_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Signal>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Signal> Signals {
+    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Signal> Signals {
       get { return signals_; }
     }
 
@@ -519,7 +519,7 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LogReaderLibrary.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[2]; }
+      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -745,7 +745,7 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LogReaderLibrary.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[3]; }
+      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -777,12 +777,12 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
 
     /// <summary>Field number for the "counts" field.</summary>
     public const int CountsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::LogReaderLibrary.Models.Proto.Metadata.Count> _repeated_counts_codec
-        = pb::FieldCodec.ForMessage(10, global::LogReaderLibrary.Models.Proto.Metadata.Count.Parser);
-    private readonly pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Count> counts_ = new pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Count>();
+    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Metadata.Count> _repeated_counts_codec
+        = pb::FieldCodec.ForMessage(10, global::SeaBrief.Models.Proto.Metadata.Count.Parser);
+    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Count> counts_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Count>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Count> Counts {
+    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Count> Counts {
       get { return counts_; }
     }
 
@@ -923,7 +923,7 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LogReaderLibrary.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[4]; }
+      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1177,7 +1177,7 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LogReaderLibrary.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[5]; }
+      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1357,7 +1357,7 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LogReaderLibrary.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[6]; }
+      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1402,12 +1402,12 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
 
     /// <summary>Field number for the "intervals" field.</summary>
     public const int IntervalsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::LogReaderLibrary.Models.Proto.Metadata.Intervals> _repeated_intervals_codec
-        = pb::FieldCodec.ForMessage(18, global::LogReaderLibrary.Models.Proto.Metadata.Intervals.Parser);
-    private readonly pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Intervals> intervals_ = new pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Intervals>();
+    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Metadata.Intervals> _repeated_intervals_codec
+        = pb::FieldCodec.ForMessage(18, global::SeaBrief.Models.Proto.Metadata.Intervals.Parser);
+    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Intervals> intervals_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Intervals>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Intervals> Intervals {
+    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Intervals> Intervals {
       get { return intervals_; }
     }
 
@@ -1572,7 +1572,7 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LogReaderLibrary.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[7]; }
+      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1604,12 +1604,12 @@ namespace LogReaderLibrary.Models.Proto.Metadata {
 
     /// <summary>Field number for the "metadata" field.</summary>
     public const int MetadataFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::LogReaderLibrary.Models.Proto.Metadata.Metadata> _repeated_metadata_codec
-        = pb::FieldCodec.ForMessage(10, global::LogReaderLibrary.Models.Proto.Metadata.Metadata.Parser);
-    private readonly pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Metadata> metadata_ = new pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Metadata>();
+    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Metadata.Metadata> _repeated_metadata_codec
+        = pb::FieldCodec.ForMessage(10, global::SeaBrief.Models.Proto.Metadata.Metadata.Parser);
+    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Metadata> metadata_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Metadata>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::LogReaderLibrary.Models.Proto.Metadata.Metadata> Metadata {
+    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Metadata> Metadata {
       get { return metadata_; }
     }
 

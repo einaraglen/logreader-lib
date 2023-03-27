@@ -1,7 +1,7 @@
 using System.Text;
 using MQTTnet;
 
-namespace LogReaderLibrary.MQTT.Message;
+namespace SeaBrief.MQTT.Message;
 
 public class MessageBuilder
 {

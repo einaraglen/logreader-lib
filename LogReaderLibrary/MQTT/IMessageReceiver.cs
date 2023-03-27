@@ -1,6 +1,6 @@
 using MQTTnet.Client;
 
-namespace LogReaderLibrary.MQTT.Message;
+namespace SeaBrief.MQTT.Message;
 
 public interface IMessageReceiver {
     Task OnMessage(MqttApplicationMessageReceivedEventArgs arg);

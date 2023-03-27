@@ -1,10 +1,10 @@
-using LogReaderLibrary.MQTT.Message;
-namespace LogReaderLibrary.MQTT.Request;
+using SeaBrief.MQTT.Message;
+namespace SeaBrief.MQTT.Request;
 
 
 public class RequestBuilder
 {
-    private string? correlation;
+    private string correlation = Guid.NewGuid().ToString();
     private string? topic;
     private TimeSpan timeout = TimeSpan.FromMinutes(1);
     public RequestBuilder WithTopic(String topic)
@@ -25,15 +25,9 @@ public class RequestBuilder
         return this;
     }
 
-
-    private string GetResponseTopic()
-    {
-        return this.topic!.Replace("Request", "Response");
-    }
-
     public async Task<byte[]> Publish(byte[] payload)
     {
-        var receiver = new ResponseReceiver(this.GetResponseTopic(), this.correlation!);
+        var receiver = new ResponseReceiver(MQTTUtils.GetResponseTopic(this.topic!), this.correlation!);
 
         MQTTClientSingleton.Instance.AddMessageReceiver(receiver);
 
@@ -42,7 +36,7 @@ public class RequestBuilder
             await new MessageBuilder()
                             .WithTopic(this.topic!)
                             .WithPayload(payload)
-                            .WithCorrelation(correlation!)
+                            .WithCorrelation(correlation)
                             .Publish()
                             .ConfigureAwait(false);
 

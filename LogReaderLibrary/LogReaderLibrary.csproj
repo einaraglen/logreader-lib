@@ -3,9 +3,9 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.1.7</Version>
-    <AssemblyName>logreader-lib-$(Version)</AssemblyName>
-    <OutputName>logreader-lib-$(Version)</OutputName>
+    <Version>0.1.9</Version>
+    <AssemblyName>seabrief-lib-$(Version)</AssemblyName>
+    <OutputName>seabrief-lib-$(Version)</OutputName>
   </PropertyGroup>
  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.22.1" />

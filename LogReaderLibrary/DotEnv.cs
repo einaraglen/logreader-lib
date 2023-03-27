@@ -1,4 +1,4 @@
-namespace LogReaderLibrary.DotEnv;
+namespace SeaBrief.DotEnv;
 
 public static class DotEnv
 {

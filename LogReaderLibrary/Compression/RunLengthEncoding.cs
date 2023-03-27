@@ -1,4 +1,4 @@
-namespace LogReaderLibrary.Compression;
+namespace SeaBrief.Compression;
 
 public class RunLengthEncoding
 {

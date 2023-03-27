@@ -1,9 +1,9 @@
-using LogReaderLibrary.MQTT.Message;
+using SeaBrief.MQTT.Message;
 using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Extensions.ManagedClient;
 
-namespace LogReaderLibrary.MQTT;
+namespace SeaBrief.MQTT;
 
 public class MQTTClientSingleton
 {

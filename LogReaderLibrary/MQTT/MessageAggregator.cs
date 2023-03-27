@@ -1,6 +1,6 @@
 using MQTTnet.Client;
 
-namespace LogReaderLibrary.MQTT.Message;
+namespace SeaBrief.MQTT.Message;
 public class MessageAggregator
 {
     private readonly List<IMessageReceiver> handlers = new List<IMessageReceiver>();

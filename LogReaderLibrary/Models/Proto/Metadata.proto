@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "LogReaderLibrary.Models.Proto.Metadata";
+option csharp_namespace = "SeaBrief.Models.Proto.Metadata";
 
 message Signal {
     int32 id = 1;
