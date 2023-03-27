@@ -47,7 +47,7 @@ public class RequestBuilder
 
             if (complete != receiver.response.Task)
             {
-                throw new TimeoutException($"Response for {this.topic} took over 1 min");
+                throw new TimeoutException($"Response for {this.topic} took over {this.timeout.Seconds} secounds");
             }
 
             return await receiver.response.Task.ConfigureAwait(false);
