@@ -2,6 +2,7 @@ using SeaBrief.MQTT.Message;
 using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Extensions.ManagedClient;
+using System.Security.Authentication;
 
 namespace SeaBrief.MQTT;
 
@@ -14,7 +15,7 @@ public class MQTTClientSingleton
     private IManagedMqttClient? client;
     private MQTTClientSingleton() { }
 
-    public void Connect(string id, string address, string port)
+    public void Connect(string id, string address, string port, string? username = null, string? password = null)
     {
         MqttClientOptionsBuilder builder =
             new MqttClientOptionsBuilder()
@@ -22,7 +23,19 @@ public class MQTTClientSingleton
                 .WithProtocolVersion(MQTTnet.Formatter.MqttProtocolVersion.V500)
                 .WithTcpServer(address, Convert.ToInt32(port));
 
-        ManagedMqttClientOptions options = 
+        if (username != null && password != null)
+        {
+            builder
+            .WithTls(new MqttClientOptionsBuilderTlsParameters()
+            {
+                UseTls = true,
+                SslProtocol = SslProtocols.Tls12
+            })
+            .WithCredentials(username, password)
+            .WithCleanSession();
+        }
+
+        ManagedMqttClientOptions options =
             new ManagedMqttClientOptionsBuilder()
                 .WithAutoReconnectDelay(TimeSpan.FromSeconds(60))
                 .WithClientOptions(builder.Build())
@@ -88,7 +101,7 @@ public class MQTTClientSingleton
 
     private Task OnFailure(ConnectingFailedEventArgs arg)
     {
-        Console.WriteLine("MQTT Connection failed check network or broker!");
+        Console.WriteLine($"MQTT Connection failed check network or broker! \n{arg.Exception}");
         return Task.CompletedTask;
     }
 }
