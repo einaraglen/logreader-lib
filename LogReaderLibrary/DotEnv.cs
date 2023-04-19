@@ -1,11 +1,11 @@
-namespace SeaBrief.DotEnv;
+namespace SeaBrief.EnvFile;
 
-public static class DotEnv
+public static class EnvFile
 {
     public static void Load(string[]? required = null)
     {
         var root = Directory.GetCurrentDirectory();
-        var file = Path.Combine(root, ".env");
+        var file = Path.Combine(root, "envfile");
 
         if (!File.Exists(file)) {
             throw new FileLoadException($"Could not locate environment variables at '{file}'");

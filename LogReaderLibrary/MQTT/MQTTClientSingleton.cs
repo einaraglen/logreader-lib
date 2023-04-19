@@ -15,25 +15,13 @@ public class MQTTClientSingleton
     private IManagedMqttClient? client;
     private MQTTClientSingleton() { }
 
-    public void Connect(string id, string address, string port, string? username = null, string? password = null)
+    public void Connect(string id, string address, string port)
     {
         MqttClientOptionsBuilder builder =
             new MqttClientOptionsBuilder()
                 .WithClientId(id)
                 .WithProtocolVersion(MQTTnet.Formatter.MqttProtocolVersion.V500)
                 .WithTcpServer(address, Convert.ToInt32(port));
-
-        if (username != null && password != null)
-        {
-            builder
-            .WithTls(new MqttClientOptionsBuilderTlsParameters()
-            {
-                UseTls = true,
-                SslProtocol = SslProtocols.Tls12
-            })
-            .WithCredentials(username, password)
-            .WithCleanSession();
-        }
 
         ManagedMqttClientOptions options =
             new ManagedMqttClientOptionsBuilder()

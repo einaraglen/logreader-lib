@@ -1,6 +1,6 @@
 namespace SeaBrief.Compression;
 
-public class Delta2
+public static class Delta2
 {
     public static long[] Encode(long[] input)
     {
@@ -12,14 +12,12 @@ public class Delta2
         long last = input[1] - input[0];
         compressed[1] = last;
 
-        int i = 2;
-        while (i < input.Length)
+        for (int i = 2; i < input.Length; i++)
         {
             long delta = input[i] - input[i - 1];
             long delta2 = delta - last;
             compressed[i] = delta2;
             last = delta;
-            i++;
         }
 
         return compressed;
@@ -27,15 +25,19 @@ public class Delta2
 
     public static long[] Decode(long[] input)
     {
+        if (input.Length == 1) return input;
+
         long[] decompressed = new long[input.Length];
-
         decompressed[0] = input[0];
+        decompressed[1] = input[0] + input[1];
 
-        long last = 0;
-        for (int i = 1; i < input.Length; i++)
+        for (int i = 2; i < input.Length; i++)
         {
-            last += input[i];
-            decompressed[i] = decompressed[i - 1] + last;
+            long delta2 = input[i];
+            long prev = decompressed[i - 1];
+            long prev2 = decompressed[i - 2];
+            long delta = delta2 + prev2;
+            decompressed[i] = delta;
         }
 
         return decompressed;
