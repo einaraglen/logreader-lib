@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace SeaBrief.Models.Proto.Metadata {
+namespace Com.Seabrief.Models.Proto {
 
   /// <summary>Holder for reflection information generated from Metadata.proto</summary>
   public static partial class MetadataReflection {
@@ -24,28 +24,31 @@ namespace SeaBrief.Models.Proto.Metadata {
     static MetadataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5NZXRhZGF0YS5wcm90byI+CgZTaWduYWwSCgoCaWQYASABKAUSDAoEbmFt",
-            "ZRgCIAEoCRIRCgRwYXRoGAMgASgJSACIAQFCBwoFX3BhdGgiKgoOU2lnbmFs",
-            "c1BheWxvYWQSGAoHc2lnbmFscxgBIAMoCzIHLlNpZ25hbCImCgVDb3VudBIO",
-            "CgZzaWduYWwYASABKAkSDQoFdmFsdWUYAiABKAMiJgoMQ291bnRQYXlsb2Fk",
-            "EhYKBmNvdW50cxgBIAMoCzIGLkNvdW50IjwKD01ldGFkYXRhUmVxdWVzdBIP",
-            "CgdzaWduYWxzGAEgAygDEgwKBGZyb20YAiABKAMSCgoCdG8YAyABKAMiGwoJ",
-            "SW50ZXJ2YWxzEg4KBnZhbHVlcxgBIAMoAyI5CghNZXRhZGF0YRIOCgZzaWdu",
-            "YWwYASABKAkSHQoJaW50ZXJ2YWxzGAIgAygLMgouSW50ZXJ2YWxzIi4KD01l",
-            "dGFkYXRhUGF5bG9hZBIbCghtZXRhZGF0YRgBIAMoCzIJLk1ldGFkYXRhQimq",
-            "AiZMb2dSZWFkZXJMaWJyYXJ5Lk1vZGVscy5Qcm90by5NZXRhZGF0YWIGcHJv",
-            "dG8z"));
+            "Cg5NZXRhZGF0YS5wcm90bxIZY29tLnNlYWJyaWVmLk1vZGVscy5Qcm90byJ0",
+            "CgZTaWduYWwSDAoEbmFtZRgBIAEoCRIPCgJpZBgCIAEoBUgAiAEBEhgKC2Rl",
+            "c2NyaXB0aW9uGAMgASgJSAGIAQESEQoEcGF0aBgEIAEoCUgCiAEBQgUKA19p",
+            "ZEIOCgxfZGVzY3JpcHRpb25CBwoFX3BhdGgiRAoOU2lnbmFsc1BheWxvYWQS",
+            "MgoHc2lnbmFscxgBIAMoCzIhLmNvbS5zZWFicmllZi5Nb2RlbHMuUHJvdG8u",
+            "U2lnbmFsIiYKBUNvdW50Eg4KBnNpZ25hbBgBIAEoCRINCgV2YWx1ZRgCIAEo",
+            "AyJACgxDb3VudFBheWxvYWQSMAoGY291bnRzGAEgAygLMiAuY29tLnNlYWJy",
+            "aWVmLk1vZGVscy5Qcm90by5Db3VudCI8Cg9NZXRhZGF0YVJlcXVlc3QSDwoH",
+            "c2lnbmFscxgBIAMoAxIMCgRmcm9tGAIgASgDEgoKAnRvGAMgASgDIhsKCUlu",
+            "dGVydmFscxIOCgZ2YWx1ZXMYASADKAMiUwoITWV0YWRhdGESDgoGc2lnbmFs",
+            "GAEgASgJEjcKCWludGVydmFscxgCIAMoCzIkLmNvbS5zZWFicmllZi5Nb2Rl",
+            "bHMuUHJvdG8uSW50ZXJ2YWxzIkgKD01ldGFkYXRhUGF5bG9hZBI1CghtZXRh",
+            "ZGF0YRgBIAMoCzIjLmNvbS5zZWFicmllZi5Nb2RlbHMuUHJvdG8uTWV0YWRh",
+            "dGFCD0INTWV0YWRhdGFQcm90b2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.Signal), global::SeaBrief.Models.Proto.Metadata.Signal.Parser, new[]{ "Id", "Name", "Path" }, new[]{ "Path" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.SignalsPayload), global::SeaBrief.Models.Proto.Metadata.SignalsPayload.Parser, new[]{ "Signals" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.Count), global::SeaBrief.Models.Proto.Metadata.Count.Parser, new[]{ "Signal", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.CountPayload), global::SeaBrief.Models.Proto.Metadata.CountPayload.Parser, new[]{ "Counts" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.MetadataRequest), global::SeaBrief.Models.Proto.Metadata.MetadataRequest.Parser, new[]{ "Signals", "From", "To" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.Intervals), global::SeaBrief.Models.Proto.Metadata.Intervals.Parser, new[]{ "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.Metadata), global::SeaBrief.Models.Proto.Metadata.Metadata.Parser, new[]{ "Signal", "Intervals" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Metadata.MetadataPayload), global::SeaBrief.Models.Proto.Metadata.MetadataPayload.Parser, new[]{ "Metadata" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.Signal), global::Com.Seabrief.Models.Proto.Signal.Parser, new[]{ "Name", "Id", "Description", "Path" }, new[]{ "Id", "Description", "Path" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.SignalsPayload), global::Com.Seabrief.Models.Proto.SignalsPayload.Parser, new[]{ "Signals" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.Count), global::Com.Seabrief.Models.Proto.Count.Parser, new[]{ "Signal", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.CountPayload), global::Com.Seabrief.Models.Proto.CountPayload.Parser, new[]{ "Counts" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.MetadataRequest), global::Com.Seabrief.Models.Proto.MetadataRequest.Parser, new[]{ "Signals", "From", "To" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.Intervals), global::Com.Seabrief.Models.Proto.Intervals.Parser, new[]{ "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.Metadata), global::Com.Seabrief.Models.Proto.Metadata.Parser, new[]{ "Signal", "Intervals" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.MetadataPayload), global::Com.Seabrief.Models.Proto.MetadataPayload.Parser, new[]{ "Metadata" }, null, null, null, null)
           }));
     }
     #endregion
@@ -59,6 +62,7 @@ namespace SeaBrief.Models.Proto.Metadata {
   {
     private static readonly pb::MessageParser<Signal> _parser = new pb::MessageParser<Signal>(() => new Signal());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Signal> Parser { get { return _parser; } }
@@ -66,7 +70,7 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Com.Seabrief.Models.Proto.MetadataReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -86,8 +90,10 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Signal(Signal other) : this() {
-      id_ = other.id_;
+      _hasBits0 = other._hasBits0;
       name_ = other.name_;
+      id_ = other.id_;
+      description_ = other.description_;
       path_ = other.path_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -98,20 +104,8 @@ namespace SeaBrief.Models.Proto.Metadata {
       return new Signal(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private int id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Id {
-      get { return id_; }
-      set {
-        id_ = value;
-      }
-    }
-
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 2;
+    public const int NameFieldNumber = 1;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,8 +116,57 @@ namespace SeaBrief.Models.Proto.Metadata {
       }
     }
 
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 2;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Id {
+      get { if ((_hasBits0 & 1) != 0) { return id_; } else { return 0; } }
+      set {
+        _hasBits0 |= 1;
+        id_ = value;
+      }
+    }
+    /// <summary>Gets whether the "id" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasId {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "id" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearId() {
+      _hasBits0 &= ~1;
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 3;
+    private string description_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_ ?? ""; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "description" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasDescription {
+      get { return description_ != null; }
+    }
+    /// <summary>Clears the value of the "description" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearDescription() {
+      description_ = null;
+    }
+
     /// <summary>Field number for the "path" field.</summary>
-    public const int PathFieldNumber = 3;
+    public const int PathFieldNumber = 4;
     private string path_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -161,8 +204,9 @@ namespace SeaBrief.Models.Proto.Metadata {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Id != other.Id) return false;
       if (Name != other.Name) return false;
+      if (Id != other.Id) return false;
+      if (Description != other.Description) return false;
       if (Path != other.Path) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -171,8 +215,9 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (HasId) hash ^= Id.GetHashCode();
+      if (HasDescription) hash ^= Description.GetHashCode();
       if (HasPath) hash ^= Path.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -192,16 +237,20 @@ namespace SeaBrief.Models.Proto.Metadata {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Id != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Id);
-      }
       if (Name.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (HasPath) {
+      if (HasId) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Id);
+      }
+      if (HasDescription) {
         output.WriteRawTag(26);
+        output.WriteString(Description);
+      }
+      if (HasPath) {
+        output.WriteRawTag(34);
         output.WriteString(Path);
       }
       if (_unknownFields != null) {
@@ -214,16 +263,20 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Id != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Id);
-      }
       if (Name.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (HasPath) {
+      if (HasId) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Id);
+      }
+      if (HasDescription) {
         output.WriteRawTag(26);
+        output.WriteString(Description);
+      }
+      if (HasPath) {
+        output.WriteRawTag(34);
         output.WriteString(Path);
       }
       if (_unknownFields != null) {
@@ -236,11 +289,14 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
-      }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (HasId) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (HasDescription) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (HasPath) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Path);
@@ -257,11 +313,14 @@ namespace SeaBrief.Models.Proto.Metadata {
       if (other == null) {
         return;
       }
-      if (other.Id != 0) {
-        Id = other.Id;
-      }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.HasId) {
+        Id = other.Id;
+      }
+      if (other.HasDescription) {
+        Description = other.Description;
       }
       if (other.HasPath) {
         Path = other.Path;
@@ -281,15 +340,19 @@ namespace SeaBrief.Models.Proto.Metadata {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Id = input.ReadInt32();
-            break;
-          }
-          case 18: {
+          case 10: {
             Name = input.ReadString();
             break;
           }
+          case 16: {
+            Id = input.ReadInt32();
+            break;
+          }
           case 26: {
+            Description = input.ReadString();
+            break;
+          }
+          case 34: {
             Path = input.ReadString();
             break;
           }
@@ -308,15 +371,19 @@ namespace SeaBrief.Models.Proto.Metadata {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Id = input.ReadInt32();
-            break;
-          }
-          case 18: {
+          case 10: {
             Name = input.ReadString();
             break;
           }
+          case 16: {
+            Id = input.ReadInt32();
+            break;
+          }
           case 26: {
+            Description = input.ReadString();
+            break;
+          }
+          case 34: {
             Path = input.ReadString();
             break;
           }
@@ -341,7 +408,7 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Com.Seabrief.Models.Proto.MetadataReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -373,12 +440,12 @@ namespace SeaBrief.Models.Proto.Metadata {
 
     /// <summary>Field number for the "signals" field.</summary>
     public const int SignalsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Metadata.Signal> _repeated_signals_codec
-        = pb::FieldCodec.ForMessage(10, global::SeaBrief.Models.Proto.Metadata.Signal.Parser);
-    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Signal> signals_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Signal>();
+    private static readonly pb::FieldCodec<global::Com.Seabrief.Models.Proto.Signal> _repeated_signals_codec
+        = pb::FieldCodec.ForMessage(10, global::Com.Seabrief.Models.Proto.Signal.Parser);
+    private readonly pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Signal> signals_ = new pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Signal>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Signal> Signals {
+    public pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Signal> Signals {
       get { return signals_; }
     }
 
@@ -519,7 +586,7 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Com.Seabrief.Models.Proto.MetadataReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -745,7 +812,7 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Com.Seabrief.Models.Proto.MetadataReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -777,12 +844,12 @@ namespace SeaBrief.Models.Proto.Metadata {
 
     /// <summary>Field number for the "counts" field.</summary>
     public const int CountsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Metadata.Count> _repeated_counts_codec
-        = pb::FieldCodec.ForMessage(10, global::SeaBrief.Models.Proto.Metadata.Count.Parser);
-    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Count> counts_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Count>();
+    private static readonly pb::FieldCodec<global::Com.Seabrief.Models.Proto.Count> _repeated_counts_codec
+        = pb::FieldCodec.ForMessage(10, global::Com.Seabrief.Models.Proto.Count.Parser);
+    private readonly pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Count> counts_ = new pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Count>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Count> Counts {
+    public pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Count> Counts {
       get { return counts_; }
     }
 
@@ -923,7 +990,7 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Com.Seabrief.Models.Proto.MetadataReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1177,7 +1244,7 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Com.Seabrief.Models.Proto.MetadataReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1357,7 +1424,7 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Com.Seabrief.Models.Proto.MetadataReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1402,12 +1469,12 @@ namespace SeaBrief.Models.Proto.Metadata {
 
     /// <summary>Field number for the "intervals" field.</summary>
     public const int IntervalsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Metadata.Intervals> _repeated_intervals_codec
-        = pb::FieldCodec.ForMessage(18, global::SeaBrief.Models.Proto.Metadata.Intervals.Parser);
-    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Intervals> intervals_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Intervals>();
+    private static readonly pb::FieldCodec<global::Com.Seabrief.Models.Proto.Intervals> _repeated_intervals_codec
+        = pb::FieldCodec.ForMessage(18, global::Com.Seabrief.Models.Proto.Intervals.Parser);
+    private readonly pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Intervals> intervals_ = new pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Intervals>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Intervals> Intervals {
+    public pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Intervals> Intervals {
       get { return intervals_; }
     }
 
@@ -1572,7 +1639,7 @@ namespace SeaBrief.Models.Proto.Metadata {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Metadata.MetadataReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Com.Seabrief.Models.Proto.MetadataReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1604,12 +1671,12 @@ namespace SeaBrief.Models.Proto.Metadata {
 
     /// <summary>Field number for the "metadata" field.</summary>
     public const int MetadataFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Metadata.Metadata> _repeated_metadata_codec
-        = pb::FieldCodec.ForMessage(10, global::SeaBrief.Models.Proto.Metadata.Metadata.Parser);
-    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Metadata> metadata_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Metadata>();
+    private static readonly pb::FieldCodec<global::Com.Seabrief.Models.Proto.Metadata> _repeated_metadata_codec
+        = pb::FieldCodec.ForMessage(10, global::Com.Seabrief.Models.Proto.Metadata.Parser);
+    private readonly pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Metadata> metadata_ = new pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Metadata>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Metadata.Metadata> Metadata {
+    public pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Metadata> Metadata {
       get { return metadata_; }
     }
 

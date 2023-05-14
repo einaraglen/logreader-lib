@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace SeaBrief.Models.Proto.Timeseries {
+namespace Com.Seabrief.Models.Proto {
 
   /// <summary>Holder for reflection information generated from Timeseries.proto</summary>
   public static partial class TimeseriesReflection {
@@ -24,33 +24,35 @@ namespace SeaBrief.Models.Proto.Timeseries {
     static TimeseriesReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBUaW1lc2VyaWVzLnByb3RvIjkKDFJhbmdlUmVxdWVzdBIPCgdzaWduYWxz",
-            "GAEgAygJEgwKBGZyb20YAiABKAQSCgoCdG8YAyABKAQiMgoOQ2hhbmdlc1Jl",
-            "cXVlc3QSDwoHc2lnbmFscxgBIAMoCRIPCgdjaGFuZ2VzGAIgASgDIikKDUJv",
-            "dW5kc1BheWxvYWQSDAoEZnJvbRgBIAEoARIKCgJ0bxgCIAEoASIdCgpUaW1l",
-            "c3RhbXBzEg8KB2VudHJpZXMYASADKAMiGQoGVmFsdWVzEg8KB2VudHJpZXMY",
-            "ASADKAEiaAobQ29tcHJlc3NlZFRpbWVzZXJpZXNQYXlsb2FkEg8KB3NpZ25h",
-            "bHMYASADKAkSHwoKdGltZXN0YW1wcxgCIAMoCzILLlRpbWVzdGFtcHMSFwoG",
-            "dmFsdWVzGAMgAygLMgcuVmFsdWVzIiwKClRpbWVzZXJpZXMSDgoGeF9heGlz",
-            "GAEgASgBEg4KBnlfYXhpcxgCIAEoASIvChBUaW1lc2VyaWVzVmFsdWVzEhsK",
-            "BnZhbHVlcxgBIAMoCzILLlRpbWVzZXJpZXMikQEKEVRpbWVzZXJpZXNQYXls",
-            "b2FkEjYKCnRpbWVzZXJpZXMYASADKAsyIi5UaW1lc2VyaWVzUGF5bG9hZC5U",
-            "aW1lc2VyaWVzRW50cnkaRAoPVGltZXNlcmllc0VudHJ5EgsKA2tleRgBIAEo",
-            "CRIgCgV2YWx1ZRgCIAEoCzIRLlRpbWVzZXJpZXNWYWx1ZXM6AjgBQiuqAihM",
-            "b2dSZWFkZXJMaWJyYXJ5Lk1vZGVscy5Qcm90by5UaW1lc2VyaWVzYgZwcm90",
-            "bzM="));
+            "ChBUaW1lc2VyaWVzLnByb3RvEhljb20uc2VhYnJpZWYuTW9kZWxzLlByb3Rv",
+            "IjkKDFJhbmdlUmVxdWVzdBIPCgdzaWduYWxzGAEgAygJEgwKBGZyb20YAiAB",
+            "KAQSCgoCdG8YAyABKAQiMgoOQ2hhbmdlc1JlcXVlc3QSDwoHc2lnbmFscxgB",
+            "IAMoCRIPCgdjaGFuZ2VzGAIgASgDIikKDUJvdW5kc1BheWxvYWQSDAoEZnJv",
+            "bRgBIAEoARIKCgJ0bxgCIAEoASIdCgpUaW1lc3RhbXBzEg8KB2VudHJpZXMY",
+            "ASADKAMiGQoGVmFsdWVzEg8KB2VudHJpZXMYASADKAEinAEKG0NvbXByZXNz",
+            "ZWRUaW1lc2VyaWVzUGF5bG9hZBIPCgdzaWduYWxzGAEgAygJEjkKCnRpbWVz",
+            "dGFtcHMYAiADKAsyJS5jb20uc2VhYnJpZWYuTW9kZWxzLlByb3RvLlRpbWVz",
+            "dGFtcHMSMQoGdmFsdWVzGAMgAygLMiEuY29tLnNlYWJyaWVmLk1vZGVscy5Q",
+            "cm90by5WYWx1ZXMiLAoKVGltZXNlcmllcxIOCgZ4X2F4aXMYASABKAESDgoG",
+            "eV9heGlzGAIgASgBIkkKEFRpbWVzZXJpZXNWYWx1ZXMSNQoGdmFsdWVzGAEg",
+            "AygLMiUuY29tLnNlYWJyaWVmLk1vZGVscy5Qcm90by5UaW1lc2VyaWVzIsUB",
+            "ChFUaW1lc2VyaWVzUGF5bG9hZBJQCgp0aW1lc2VyaWVzGAEgAygLMjwuY29t",
+            "LnNlYWJyaWVmLk1vZGVscy5Qcm90by5UaW1lc2VyaWVzUGF5bG9hZC5UaW1l",
+            "c2VyaWVzRW50cnkaXgoPVGltZXNlcmllc0VudHJ5EgsKA2tleRgBIAEoCRI6",
+            "CgV2YWx1ZRgCIAEoCzIrLmNvbS5zZWFicmllZi5Nb2RlbHMuUHJvdG8uVGlt",
+            "ZXNlcmllc1ZhbHVlczoCOAFCEUIPVGltZXNlcmllc1Byb3RvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Timeseries.RangeRequest), global::SeaBrief.Models.Proto.Timeseries.RangeRequest.Parser, new[]{ "Signals", "From", "To" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Timeseries.ChangesRequest), global::SeaBrief.Models.Proto.Timeseries.ChangesRequest.Parser, new[]{ "Signals", "Changes" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Timeseries.BoundsPayload), global::SeaBrief.Models.Proto.Timeseries.BoundsPayload.Parser, new[]{ "From", "To" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Timeseries.Timestamps), global::SeaBrief.Models.Proto.Timeseries.Timestamps.Parser, new[]{ "Entries" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Timeseries.Values), global::SeaBrief.Models.Proto.Timeseries.Values.Parser, new[]{ "Entries" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Timeseries.CompressedTimeseriesPayload), global::SeaBrief.Models.Proto.Timeseries.CompressedTimeseriesPayload.Parser, new[]{ "Signals", "Timestamps", "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Timeseries.Timeseries), global::SeaBrief.Models.Proto.Timeseries.Timeseries.Parser, new[]{ "XAxis", "YAxis" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Timeseries.TimeseriesValues), global::SeaBrief.Models.Proto.Timeseries.TimeseriesValues.Parser, new[]{ "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SeaBrief.Models.Proto.Timeseries.TimeseriesPayload), global::SeaBrief.Models.Proto.Timeseries.TimeseriesPayload.Parser, new[]{ "Timeseries" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.RangeRequest), global::Com.Seabrief.Models.Proto.RangeRequest.Parser, new[]{ "Signals", "From", "To" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.ChangesRequest), global::Com.Seabrief.Models.Proto.ChangesRequest.Parser, new[]{ "Signals", "Changes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.BoundsPayload), global::Com.Seabrief.Models.Proto.BoundsPayload.Parser, new[]{ "From", "To" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.Timestamps), global::Com.Seabrief.Models.Proto.Timestamps.Parser, new[]{ "Entries" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.Values), global::Com.Seabrief.Models.Proto.Values.Parser, new[]{ "Entries" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.CompressedTimeseriesPayload), global::Com.Seabrief.Models.Proto.CompressedTimeseriesPayload.Parser, new[]{ "Signals", "Timestamps", "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.Timeseries), global::Com.Seabrief.Models.Proto.Timeseries.Parser, new[]{ "XAxis", "YAxis" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.TimeseriesValues), global::Com.Seabrief.Models.Proto.TimeseriesValues.Parser, new[]{ "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Seabrief.Models.Proto.TimeseriesPayload), global::Com.Seabrief.Models.Proto.TimeseriesPayload.Parser, new[]{ "Timeseries" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -71,7 +73,7 @@ namespace SeaBrief.Models.Proto.Timeseries {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Timeseries.TimeseriesReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Com.Seabrief.Models.Proto.TimeseriesReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -323,7 +325,7 @@ namespace SeaBrief.Models.Proto.Timeseries {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Timeseries.TimeseriesReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Com.Seabrief.Models.Proto.TimeseriesReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -538,7 +540,7 @@ namespace SeaBrief.Models.Proto.Timeseries {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Timeseries.TimeseriesReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Com.Seabrief.Models.Proto.TimeseriesReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -764,7 +766,7 @@ namespace SeaBrief.Models.Proto.Timeseries {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Timeseries.TimeseriesReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Com.Seabrief.Models.Proto.TimeseriesReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -944,7 +946,7 @@ namespace SeaBrief.Models.Proto.Timeseries {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Timeseries.TimeseriesReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Com.Seabrief.Models.Proto.TimeseriesReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1124,7 +1126,7 @@ namespace SeaBrief.Models.Proto.Timeseries {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Timeseries.TimeseriesReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Com.Seabrief.Models.Proto.TimeseriesReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1169,23 +1171,23 @@ namespace SeaBrief.Models.Proto.Timeseries {
 
     /// <summary>Field number for the "timestamps" field.</summary>
     public const int TimestampsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Timeseries.Timestamps> _repeated_timestamps_codec
-        = pb::FieldCodec.ForMessage(18, global::SeaBrief.Models.Proto.Timeseries.Timestamps.Parser);
-    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Timeseries.Timestamps> timestamps_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Timeseries.Timestamps>();
+    private static readonly pb::FieldCodec<global::Com.Seabrief.Models.Proto.Timestamps> _repeated_timestamps_codec
+        = pb::FieldCodec.ForMessage(18, global::Com.Seabrief.Models.Proto.Timestamps.Parser);
+    private readonly pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Timestamps> timestamps_ = new pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Timestamps>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Timeseries.Timestamps> Timestamps {
+    public pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Timestamps> Timestamps {
       get { return timestamps_; }
     }
 
     /// <summary>Field number for the "values" field.</summary>
     public const int ValuesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Timeseries.Values> _repeated_values_codec
-        = pb::FieldCodec.ForMessage(26, global::SeaBrief.Models.Proto.Timeseries.Values.Parser);
-    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Timeseries.Values> values_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Timeseries.Values>();
+    private static readonly pb::FieldCodec<global::Com.Seabrief.Models.Proto.Values> _repeated_values_codec
+        = pb::FieldCodec.ForMessage(26, global::Com.Seabrief.Models.Proto.Values.Parser);
+    private readonly pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Values> values_ = new pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Values>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Timeseries.Values> Values {
+    public pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Values> Values {
       get { return values_; }
     }
 
@@ -1354,7 +1356,7 @@ namespace SeaBrief.Models.Proto.Timeseries {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Timeseries.TimeseriesReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Com.Seabrief.Models.Proto.TimeseriesReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1580,7 +1582,7 @@ namespace SeaBrief.Models.Proto.Timeseries {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Timeseries.TimeseriesReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Com.Seabrief.Models.Proto.TimeseriesReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1612,12 +1614,12 @@ namespace SeaBrief.Models.Proto.Timeseries {
 
     /// <summary>Field number for the "values" field.</summary>
     public const int ValuesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::SeaBrief.Models.Proto.Timeseries.Timeseries> _repeated_values_codec
-        = pb::FieldCodec.ForMessage(10, global::SeaBrief.Models.Proto.Timeseries.Timeseries.Parser);
-    private readonly pbc::RepeatedField<global::SeaBrief.Models.Proto.Timeseries.Timeseries> values_ = new pbc::RepeatedField<global::SeaBrief.Models.Proto.Timeseries.Timeseries>();
+    private static readonly pb::FieldCodec<global::Com.Seabrief.Models.Proto.Timeseries> _repeated_values_codec
+        = pb::FieldCodec.ForMessage(10, global::Com.Seabrief.Models.Proto.Timeseries.Parser);
+    private readonly pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Timeseries> values_ = new pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Timeseries>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::SeaBrief.Models.Proto.Timeseries.Timeseries> Values {
+    public pbc::RepeatedField<global::Com.Seabrief.Models.Proto.Timeseries> Values {
       get { return values_; }
     }
 
@@ -1758,7 +1760,7 @@ namespace SeaBrief.Models.Proto.Timeseries {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SeaBrief.Models.Proto.Timeseries.TimeseriesReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Com.Seabrief.Models.Proto.TimeseriesReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1790,12 +1792,12 @@ namespace SeaBrief.Models.Proto.Timeseries {
 
     /// <summary>Field number for the "timeseries" field.</summary>
     public const int TimeseriesFieldNumber = 1;
-    private static readonly pbc::MapField<string, global::SeaBrief.Models.Proto.Timeseries.TimeseriesValues>.Codec _map_timeseries_codec
-        = new pbc::MapField<string, global::SeaBrief.Models.Proto.Timeseries.TimeseriesValues>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::SeaBrief.Models.Proto.Timeseries.TimeseriesValues.Parser), 10);
-    private readonly pbc::MapField<string, global::SeaBrief.Models.Proto.Timeseries.TimeseriesValues> timeseries_ = new pbc::MapField<string, global::SeaBrief.Models.Proto.Timeseries.TimeseriesValues>();
+    private static readonly pbc::MapField<string, global::Com.Seabrief.Models.Proto.TimeseriesValues>.Codec _map_timeseries_codec
+        = new pbc::MapField<string, global::Com.Seabrief.Models.Proto.TimeseriesValues>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Com.Seabrief.Models.Proto.TimeseriesValues.Parser), 10);
+    private readonly pbc::MapField<string, global::Com.Seabrief.Models.Proto.TimeseriesValues> timeseries_ = new pbc::MapField<string, global::Com.Seabrief.Models.Proto.TimeseriesValues>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<string, global::SeaBrief.Models.Proto.Timeseries.TimeseriesValues> Timeseries {
+    public pbc::MapField<string, global::Com.Seabrief.Models.Proto.TimeseriesValues> Timeseries {
       get { return timeseries_; }
     }
 

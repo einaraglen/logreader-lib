@@ -3,6 +3,7 @@ using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Extensions.ManagedClient;
 using System.Security.Authentication;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SeaBrief.MQTT;
 
@@ -15,13 +16,26 @@ public class MQTTClientSingleton
     private IManagedMqttClient? client;
     private MQTTClientSingleton() { }
 
-    public void Connect(string id, string address, string port)
+    public void Connect(string id, string address, string port, string client_pfx)
     {
+        var clientCert = new X509Certificate2(client_pfx);
         MqttClientOptionsBuilder builder =
             new MqttClientOptionsBuilder()
                 .WithClientId(id)
                 .WithProtocolVersion(MQTTnet.Formatter.MqttProtocolVersion.V500)
-                .WithTcpServer(address, Convert.ToInt32(port));
+                .WithTcpServer(address, Convert.ToInt32(port))
+                 .WithTls(new MqttClientOptionsBuilderTlsParameters()
+                 {
+                     UseTls = true,
+                     SslProtocol = System.Security.Authentication.SslProtocols.Tls12,
+                     CertificateValidationHandler = (o) =>
+                     {
+                         return true;
+                     },
+                     Certificates = new[]{
+                     clientCert,
+                 }
+                 });
 
         ManagedMqttClientOptions options =
             new ManagedMqttClientOptionsBuilder()
@@ -41,15 +55,15 @@ public class MQTTClientSingleton
         return this;
     }
 
-    public MQTTClientSingleton AddMessageReceiver(IMessageReceiver receiver)
+    public MQTTClientSingleton AddMessageReceiver(string topic, IMessageReceiver receiver)
     {
-        this.aggregator.Subscribe(receiver);
+        this.aggregator.Subscribe(topic, receiver);
         return this;
     }
 
-    public MQTTClientSingleton RemoveMessageReceiver(IMessageReceiver receiver)
+    public MQTTClientSingleton RemoveMessageReceiver(string topic, IMessageReceiver receiver)
     {
-        this.aggregator.Unsubscribe(receiver);
+        this.aggregator.Unsubscribe(topic, receiver);
         return this;
     }
 
@@ -77,13 +91,13 @@ public class MQTTClientSingleton
 
     private Task OnConnected(MqttClientConnectedEventArgs arg)
     {
-        Console.WriteLine("MQTT Connected");
+        Console.WriteLine($"MQTT Connected");
         return Task.CompletedTask;
     }
 
     private Task OnDisconected(MqttClientDisconnectedEventArgs arg)
     {
-        Console.WriteLine("MQTT Disconnected");
+        Console.WriteLine($"MQTT Disconnected \n{arg.ReasonString}");
         return Task.CompletedTask;
     }
 

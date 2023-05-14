@@ -27,9 +27,10 @@ public class RequestBuilder
 
     public async Task<byte[]> Publish(byte[] payload)
     {
-        var receiver = new ResponseReceiver(MQTTUtils.GetResponseTopic(this.topic!), this.correlation!);
+        var responseTopic = MQTTUtils.GetResponseTopic(this.topic!);
+        var receiver = new ResponseReceiver(responseTopic, this.correlation!);
 
-        MQTTClientSingleton.Instance.AddMessageReceiver(receiver);
+        MQTTClientSingleton.Instance.AddMessageReceiver(responseTopic, receiver);
 
         try
         {
@@ -54,7 +55,7 @@ public class RequestBuilder
         }
         finally
         {
-            MQTTClientSingleton.Instance.RemoveMessageReceiver(receiver);
+            MQTTClientSingleton.Instance.RemoveMessageReceiver(responseTopic, receiver);
         }
     }
 }

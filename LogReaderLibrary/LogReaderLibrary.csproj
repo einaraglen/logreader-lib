@@ -3,7 +3,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.1.9</Version>
+    <Version>0.2.2</Version>
     <AssemblyName>seabrief-lib-$(Version)</AssemblyName>
     <OutputName>seabrief-lib-$(Version)</OutputName>
   </PropertyGroup>

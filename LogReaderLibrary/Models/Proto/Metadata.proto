@@ -1,11 +1,14 @@
 syntax = "proto3";
 
-option csharp_namespace = "SeaBrief.Models.Proto.Metadata";
+package com.seabrief.Models.Proto;
+
+option java_outer_classname = "MetadataProto";
 
 message Signal {
-    int32 id = 1;
-    string name = 2;
-    optional string path = 3;
+    string name = 1;
+    optional  int32 id = 2;
+    optional string description = 3;
+    optional string path = 4;
 }
 
 message SignalsPayload {

@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-option csharp_namespace = "SeaBrief.Models.Proto.Timeseries";
+package com.seabrief.Models.Proto;
+
+option java_outer_classname = "TimeseriesProto";
 
 message RangeRequest {
   repeated string signals = 1;
