@@ -49,7 +49,7 @@ public class MessageAggregator
 
         foreach (string key in this.handlers.Keys)
         {
-            if (Regex.IsMatch(key, @"^\^?(?=.*\$).*$"))
+            if (key.Contains(".+"))
             {
                 Regex regex = new Regex(key);
                 if (regex.IsMatch(topic))
@@ -62,6 +62,7 @@ public class MessageAggregator
             {
                 matches.AddRange(this.handlers[key]);
             }
+
         }
 
         return matches;
