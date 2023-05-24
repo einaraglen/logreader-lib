@@ -97,7 +97,7 @@ public class MQTTClientSingleton
 
     private Task OnDisconected(MqttClientDisconnectedEventArgs arg)
     {
-        Console.WriteLine($"MQTT Disconnected \n{arg.ReasonString}");
+        Console.WriteLine($"MQTT Disconnected \n{arg.Exception}");
         return Task.CompletedTask;
     }
 
